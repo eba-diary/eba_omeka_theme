@@ -1773,3 +1773,60 @@ footer .navigation a {
     width: 420px;
   }
 }
+
+/**
+ * Diary page specific styling
+ */
+
+.diary_viewer h4 {
+  font-size: 100%;
+  margin: 0px;
+}
+
+.diary_viewer p {
+  margin-top: 5px;
+  border-top: 1px solid;
+}
+
+.diary_viewer a {
+  text-decoration: none;
+}
+
+.diary_view {
+  width: 250px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.diary_view p {
+  min-height: 75px;
+}
+
+.viewer_btn {
+  display:block;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 5px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  vertical-align: middle;
+  text-align: center;
+  margin: 5px 5px 5px 5px;
+
+}
+
+.viewer_btn:hover {
+  background-color: #E0E0E0;
+  color: #333;
+}
+
+#social-media {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#social-media a{
+  margin-right: 40px;
+}

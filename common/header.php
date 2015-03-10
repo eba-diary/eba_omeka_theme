@@ -35,11 +35,18 @@
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
         <header>
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-            <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
+            <div id="site-title">
+              <?php echo link_to_home_page(theme_logo()); ?>
+            </div>
 
             <div id="search-container">
                 <h2>Search</h2>
-                    <?php echo search_form(array('show_advanced'=>TRUE)); ?>
+                <?php echo search_form(array('show_advanced'=>TRUE)); ?>
+                <div id="social-media">
+                    <a href="https://www.facebook.com/EmmaBAndrewsDiary?fref=ts"><img src="<?php echo img('facebook_small.gif'); ?>" alt="Facebook" title="Facebook"/></a>
+                    <a href="http://twitter.com/sarahketchley"><img src="<?php echo img('twitter_small.gif'); ?>" alt="Twitter" title="Twitter"/></a>
+                    <a href="http://emmabandrews.tumblr.com/"><img src="<?php echo img('tumblr_logo_white_blue_16.png'); ?>" alt="Tumblr" title="Tumblr"/></a>
+                </div>
             </div>
         </header>
 
