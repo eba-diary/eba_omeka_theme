@@ -1,56 +1,34 @@
 <?php
-$pageTitle = __('Browse Items');
+$pageTitle = "Emmapedia";
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
-<h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h1><?php echo $pageTitle;?></h1>
 
-<nav class="items-nav navigation secondary-nav">
-    <?php echo public_nav_items(); ?>
-</nav>
+<p>An index of individuals mentioned by Emma Andrews in her diary including Egyptologists and archaeologists, members of the gentry, politicians and other well-heeled travelers. The Emmapedia provides historical and biographical information with open source images when available.</p>
 
-<?php echo item_search_filters(); ?>
+
 
 <?php echo pagination_links(); ?>
 
 <?php if ($total_results > 0): ?>
 
-<?php
-$sortLinks[__('Title')] = 'Dublin Core,Title';
-$sortLinks[__('Creator')] = 'Dublin Core,Creator';
-$sortLinks[__('Date Added')] = 'added';
-?>
-<div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
-</div>
-
 <?php endif; ?>
 
 <?php foreach (loop('items') as $item): ?>
 <div class="item hentry">
-    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
-    <div class="item-meta">
-    <?php if (metadata('item', 'has thumbnail')): ?>
-    <div class="item-img">
+	<?php if (metadata('item', 'has thumbnail')): ?>
         <?php echo link_to_item(item_image('square_thumbnail')); ?>
-    </div>
-    <?php endif; ?>
-
-    <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
-    <div class="item-description">
-        <?php echo $description; ?>
-    </div>
-    <?php endif; ?>
-
-    <?php if (metadata('item', 'has tags')): ?>
-    <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
-        <?php echo tag_string('items'); ?></p>
-    </div>
-    <?php endif; ?>
-
-    <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
-
-    </div><!-- end class="item-meta" -->
+    <?php else: ?>
+		<img src="<?php echo img('thumbnail_blank.jpg'); ?>" alt="No Image" title="No Image"/>
+	<?php endif; ?>
+	<div class="item_metadata">
+		<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?> 
+		Birth Date: <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>, 
+		Death Date: <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?>,
+		Occupation: <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>
+		<?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
+	</div>
 </div><!-- end class="item hentry" -->
 <?php endforeach; ?>
 

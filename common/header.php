@@ -36,30 +36,40 @@
         <header>
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
             <div id="site-title">
-              <?php echo link_to_home_page(theme_logo()); ?>
+              <?php echo link_to_home_page("<img src='" . img("eba_logo.jpg") . "' alt='Emma B. Andrews Diary Project'/>"); ?>
             </div>
 
             <div id="search-container">
                 <h2>Search</h2>
                 <?php echo search_form(array('show_advanced'=>TRUE)); ?>
                 <div id="social-media">
-                    <a href="https://www.facebook.com/EmmaBAndrewsDiary?fref=ts"><img src="<?php echo img('facebook_small.gif'); ?>" alt="Facebook" title="Facebook"/></a>
-                    <a href="http://twitter.com/sarahketchley"><img src="<?php echo img('twitter_small.gif'); ?>" alt="Twitter" title="Twitter"/></a>
-                    <a href="http://emmabandrews.tumblr.com/"><img src="<?php echo img('tumblr_logo_white_blue_16.png'); ?>" alt="Tumblr" title="Tumblr"/></a>
+                    <a href="https://www.facebook.com/EmmaBAndrewsDiary?fref=ts"><img src="<?php echo img('FB-f-Logo__blue_50.png'); ?>" alt="Facebook" title="Facebook"/></a>
+                    <a href="http://twitter.com/sarahketchley"><img src="<?php echo img('twitter_logo.png'); ?>" alt="Twitter" title="Twitter"/></a>
+                    <a href="http://emmabandrews.tumblr.com/"><img src="<?php echo img('tumblr_logo_white_blue_64.png'); ?>" alt="Tumblr" title="Tumblr"/></a>
                 </div>
             </div>
         </header>
 
          <div id="primary-nav">
-             <?php
-                  echo public_nav_main();
-             ?>
+			<ul class="navigation">
+				<li><a href="<?php echo url('home');?>">Home</a></li>
+				<li><a href="<?php echo url('emma-b-andrews');?>">Emma B. Andrews</a></li>
+				<li><a href="<?php echo url('the-diaries');?>">The Diaries</a></li>
+				<li><a href="<?php echo url('tools--technology');?>">Tools &amp; Technology</a></li>
+				<li><a href="<?php echo url('items');?>?sort_field=Dublin+Core%2CTitle">Emmapedia</a></li>
+				<li><a href="<?php echo url('about');?>">About</a></li>
+			</ul>
          </div>
   
          <div id="mobile-nav">
-             <?php
-                  echo public_nav_main();
-             ?>
+			<ul class="navigation">
+				<li><a href="<?php echo url('home');?>">Home</a></li>
+				<li><a href="<?php echo url('emma-b-andrews');?>">Emma B. Andrews</a></li>
+				<li><a href="<?php echo url('the-diaries');?>">The Diaries</a></li>
+				<li><a href="<?php echo url('tools--technology');?>">Tools &amp; Technology</a></li>
+				<li><a href="<?php echo url('items');?>?sort_field=Dublin+Core%2CTitle">Emmapedia</a></li>
+				<li><a href="<?php echo url('about');?>">About</a></li>
+			</ul>
          </div>
         
         <?php echo theme_header_image(); ?>

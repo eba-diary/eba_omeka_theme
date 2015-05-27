@@ -1102,7 +1102,6 @@ ul.title-list {
 .browse .item {
   clear: both;
   border-bottom: 1px solid #eee;
-  padding: 3em 0;
   overflow: hidden;
 }
 
@@ -1750,8 +1749,6 @@ footer .navigation a {
   .browse .item img {
     max-width: 50%;
     float: left;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
   }
 
   #sort-links {
@@ -1829,4 +1826,20 @@ footer .navigation a {
 
 #social-media a{
   margin-right: 40px;
+}
+
+.item{
+	margin:20px;
+}
+
+.item img{
+	height: 50px;
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+
+.item_metadata{
+	display:block;
+	padding-top:10px;
 }

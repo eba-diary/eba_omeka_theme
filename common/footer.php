@@ -18,7 +18,7 @@
         <p><?php echo $copyright; ?></p>
         <?php endif; ?>
         
-        <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+        
 
     </div><!-- end footer-content -->
 
