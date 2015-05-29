@@ -3,10 +3,10 @@
     <h2><?php echo metadata('item', array('Dublin Core','Title')); ?></h2>
 	
 	<p>
-		<strong>Birth Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>, 
-		<strong>Death Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?>,
-		<strong>Birthplace:</strong> <?php echo metadata('item', array('Item Type Metadata','Birthplace')); ?>,
-		<strong>Occupation:</strong> <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>,
+		<strong>Birth Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>  
+		<strong>Death Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?> 
+		<strong>Birthplace:</strong> <?php echo metadata('item', array('Item Type Metadata','Birthplace')); ?> 
+		<strong>Occupation:</strong> <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>
 		<strong>Notable Family Members:</strong> <?php echo metadata('item', array('Item Type Metadata','Notable Family Members')); ?>
 	</p>
 	
@@ -17,6 +17,11 @@
 		<strong>Bibliography:</strong> <?php echo metadata('item', array('Item Type Metadata','Bibliography')); ?>
 	</p>
 	
+	<p>
+		<strong>Source:</strong><br />
+		<?php echo metadata('item', array('Dublin Core','Source')); ?>
+	</p>
+
 	<p>
 		<strong>Citation:</strong><br />
 		<?php echo metadata('item','citation',array('no_escape'=>true)); ?>

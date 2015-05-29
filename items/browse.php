@@ -23,10 +23,10 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 		<img src="<?php echo img('thumbnail_blank.jpg'); ?>" alt="No Image" title="No Image"/>
 	<?php endif; ?>
 	<div class="item_metadata">
-		<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?> 
-		Birth Date: <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>, 
-		Death Date: <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?>,
-		Occupation: <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>
+		<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?>&nbsp;
+		<span class="meta_labels">Birth Date:</span> <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>,&nbsp;
+		<span class="meta_labels">Death Date:</span> <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?>,&nbsp;
+		<span class="meta_labels">Occupation:</span> <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>&nbsp;
 		<?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 	</div>
 </div><!-- end class="item hentry" -->

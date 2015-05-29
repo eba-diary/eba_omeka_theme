@@ -10,7 +10,7 @@ echo head(array(
     'bodyid' => metadata('simple_pages_page', 'slug')
 ));
 ?>
-<div id="primary" class="chrisTest">
+<div id="primary">
     <h1><?php echo metadata('simple_pages_page', 'title'); ?></h1>
     <?php
     $text = metadata('simple_pages_page', 'text', array('no_escape' => true));
