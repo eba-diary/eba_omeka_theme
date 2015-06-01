@@ -1856,14 +1856,34 @@ footer .navigation a {
 	padding-top:10px;
 }
 
-h1{
-	line-height:26px;
-	font-size:26px;
+.metadata_list{
+  margin-top:0px;
+}
+
+.metadata_p{
+  margin-bottom:0px;
+}
+
+h2{
+  text-transform: uppercase;
+	line-height:22px;
+	font-size:22px;
+}
+
+#site-title h1{
+  text-transform: uppercase;
+  line-height:26px;
+  font-size:26px;
+  display: none;
 }
 
 .meta_labels{
 	font-style:italic;
 	font-size:80%;
+}
+
+.meta_bio_labels{
+	font-style:italic;
 }
 
 .outputs-label{
@@ -1873,4 +1893,9 @@ h1{
 #output-format-list{
 	font-size:80%;
 	margin-top:0px;
+}
+
+.title_subtext{
+  font-size: 14px;
+  line-height:14px;
 }

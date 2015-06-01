@@ -3,24 +3,39 @@
     <h2><?php echo metadata('item', array('Dublin Core','Title')); ?></h2>
 	
 	<p>
-		<strong>Birth Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>  
-		<strong>Death Date:</strong> <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?> 
-		<strong>Birthplace:</strong> <?php echo metadata('item', array('Item Type Metadata','Birthplace')); ?> 
-		<strong>Occupation:</strong> <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>
-		<strong>Notable Family Members:</strong> <?php echo metadata('item', array('Item Type Metadata','Notable Family Members')); ?>
+		<strong>Biographical Information:</strong>
+		<span class="meta_bio_labels">Birth Date:</span> <?php echo metadata('item', array('Item Type Metadata','Birth Date')); ?>  
+		<span class="meta_bio_labels">Death Date:</span> <?php echo metadata('item', array('Item Type Metadata','Death Date')); ?> 
+		<span class="meta_bio_labels">Birthplace:</span> <?php echo metadata('item', array('Item Type Metadata','Birthplace')); ?> 
+		<span class="meta_bio_labels">Occupation:</span> <?php echo metadata('item', array('Item Type Metadata','Occupation')); ?>
+		<span class="meta_bio_labels">Notable Family Members:</span> <?php echo metadata('item', array('Item Type Metadata','Notable Family Members')); ?>
 	</p>
 	
 	<p><strong>Biographical Text:</strong> <?php echo metadata('item', array('Item Type Metadata','Biographical Text')); ?></p>
 	
-	<p>
-		<strong>Materials:</strong> <?php echo metadata('item', array('Item Type Metadata','Materials')); ?><br />
-		<strong>Bibliography:</strong> <?php echo metadata('item', array('Item Type Metadata','Bibliography')); ?>
-	</p>
+	<p class="metadata_p"><strong>Bibliography:</strong></p>
+		<?php $metaBibliography = metadata('item', array('Item Type Metadata','Bibliography'), array('all'=>true)); ?>
+		<ul class="metadata_list">
+			<?php if ($metaBibliography): ?>
+				<?php foreach ($metaBibliography as $bibliography): ?>
+					<li><?php echo $bibliography; ?></li>
+				<?php endforeach; ?>
+			<?php else: ?>
+				<li>no information</li>
+			<?php endif; ?>
+		</ul>
 	
-	<p>
-		<strong>Source:</strong><br />
-		<?php echo metadata('item', array('Dublin Core','Source')); ?>
-	</p>
+	<p class="metadata_p"><strong>Source:</strong></p>
+		<?php $metaSources = metadata('item', array('Dublin Core','Source'), array('all'=>true)); ?>
+		<ul class="metadata_list">
+			<?php if ($metaSources): ?>
+				<?php foreach ($metaSources as $source): ?>
+					<li><?php echo $source; ?></li>
+				<?php endforeach; ?>
+			<?php else: ?>
+				<li>no information</li>
+			<?php endif; ?>
+		</ul>
 
 	<p>
 		<strong>Citation:</strong><br />

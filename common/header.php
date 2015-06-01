@@ -37,6 +37,7 @@
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
             <div id="site-title">
               <?php echo link_to_home_page("<img src='" . img("eba_logo.jpg") . "' alt='Emma B. Andrews Diary Project'/>"); ?>
+                <h1>Emma B. Andrews Diary Project</h1>
             </div>
 
             <div id="search-container">
